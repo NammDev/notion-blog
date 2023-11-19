@@ -1,0 +1,80 @@
+'use client'
+
+import { useRouter } from 'next/navigation'
+import React from 'react'
+
+const TagList = () => {
+  const router = useRouter()
+  const currentTag = router || undefined
+  const data = {
+    Docs: 1,
+    Morethanlog: 1,
+    SEO: 1,
+    Blog: 1,
+    'Next.js': 4,
+    GraphQL: 3,
+    Apollo: 2,
+    Rest: 1,
+    GA: 1,
+    'Open Source': 1,
+    Github: 1,
+  }
+
+  const handleClickTag = (value: any) => {
+    // delete
+    if (currentTag === value) {
+      //   router.push({
+      //     query: {
+      //       ...router.query,
+      //       tag: undefined,
+      //     },
+      //   })
+    }
+    // add
+    else {
+      //   router.push({
+      //     query: {
+      //       ...router.query,
+      //       tag: value,
+      //     },
+      //   })
+    }
+  }
+  return (
+    <div className='tagList'>
+      <div className='top hidden md:block p-1 mb-3'>🏷️ Tags</div>
+      <div className='list flex flex-wrap gap-1 md:block mb-6 overflow-x-auto scrollbar-none'>
+        {Object.keys(data).map((key) => (
+          <a
+            className='block p-1 pt-2 pb-2 mt-1 mb-1 rounded-md text-sm leading-5 flex-shrink-0 cursor-pointer'
+            key={key}
+            // data-active={key === currentTag}
+            onClick={() => handleClickTag(key)}
+          >
+            {key}
+          </a>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+export default TagList
+
+// const StyledWrapper = styled.div`
+//   a {
+//     color: ${({ theme }) => theme.colors.gray10};
+
+//     :hover {
+//       background-color: ${({ theme }) => theme.colors.gray4};
+//     }
+//     &[data-active='true'] {
+//       color: ${({ theme }) => theme.colors.gray12};
+//       background-color: ${({ theme }) => theme.colors.gray4};
+
+//       :hover {
+//         background-color: ${({ theme }) => theme.colors.gray4};
+//       }
+//     }
+//   }
+// `
