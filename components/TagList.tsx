@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation'
 import React from 'react'
+import { Emoji } from './Emoji'
 
 const TagList = () => {
   const router = useRouter()
@@ -42,7 +43,9 @@ const TagList = () => {
   }
   return (
     <div className='tagList'>
-      <div className='top hidden md:block p-1 mb-3'>🏷️ Tags</div>
+      <div className='top hidden md:block p-1 mb-3'>
+        <Emoji>🏷️</Emoji> Tags
+      </div>
       <div className='list flex flex-wrap gap-1 md:block mb-6 overflow-x-auto scrollbar-none'>
         {Object.keys(data).map((key) => (
           <a
