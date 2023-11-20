@@ -1,50 +1,32 @@
+import Link from 'next/link'
+import { CONFIG } from '@/site.config'
+import { cn } from '@/lib/utils'
+import ThemeToggle from './ThemeToggle'
+import NavBar from './NavBar'
+
 type Props = {
   fullWidth: boolean
 }
 
 const Header: React.FC<Props> = ({ fullWidth }) => {
   return (
-    <StyledWrapper>
-      <div data-full-width={fullWidth} className='container'>
-        <Logo />
-        <div className='nav'>
+    <div className='z-30 sticky top-0 bg-black shadow-md'>
+      <div
+        className={cn(
+          'flex justify-between items-center w-full max-w-[1120px] h-12 mx-auto my-0 px-4',
+          fullWidth && 'sm:pl-24 sm:pr-24'
+        )}
+      >
+        <Link href='/' aria-label={CONFIG.blog.title}>
+          {CONFIG.blog.title}
+        </Link>
+        <div className='flex gap-3 items-center'>
           <ThemeToggle />
           <NavBar />
         </div>
       </div>
-    </StyledWrapper>
+    </div>
   )
 }
 
 export default Header
-
-const StyledWrapper = styled.div`
-  z-index: ${zIndexes.header};
-  position: sticky;
-  top: 0;
-  background-color: ${({ theme }) => theme.colors.gray2};
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-
-  .container {
-    display: flex;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1120px;
-    height: 3rem;
-    margin: 0 auto;
-    &[data-full-width='true'] {
-      @media (min-width: 768px) {
-        padding-left: 6rem;
-        padding-right: 6rem;
-      }
-    }
-    .nav {
-      display: flex;
-      gap: 0.75rem;
-      align-items: center;
-    }
-  }
-`

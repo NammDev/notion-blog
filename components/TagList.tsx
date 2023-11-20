@@ -46,7 +46,7 @@ const TagList = () => {
       <div className='list flex flex-wrap gap-1 md:block mb-6 overflow-x-auto scrollbar-none'>
         {Object.keys(data).map((key) => (
           <a
-            className='block p-1 pt-2 pb-2 mt-1 mb-1 rounded-md text-sm leading-5 flex-shrink-0 cursor-pointer'
+            className='block text-sm leading-5 text-[rgb(126,126,126)] shrink-0 cursor-pointer my-1 px-4 py-1 rounded-xl hover:bg-[rgb(40,40,40)]'
             key={key}
             // data-active={key === currentTag}
             onClick={() => handleClickTag(key)}
