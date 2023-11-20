@@ -6,7 +6,7 @@ const NavBar: React.FC = () => {
     <div className='shrink-0'>
       <ul className='flex flex-row'>
         {links.map((link) => (
-          <li key={link.id} className='block ml-4 text-gray-200'>
+          <li key={link.id} className='block ml-4 text-[rgb(160,160,160)]'>
             <Link href={link.to}>{link.name}</Link>
           </li>
         ))}

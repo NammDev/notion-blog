@@ -1,5 +1,7 @@
+import ContactCard from '@/components/ContactCard'
 import Footer from '@/components/Footer'
 import ProfileCard from '@/components/ProfileCard'
+import ServiceCard from '@/components/ServiceCard'
 import TagList from '@/components/TagList'
 import Image from 'next/image'
 
@@ -13,8 +15,8 @@ export default function Home() {
         <div className='col-span-12 lg:col-span-7'>Profile</div>
         <div className='hidden lg:block overflow-scroll sticky lg:col-span-3 top-[63px] scrollbar-none h-[calc(100vh-73px)]'>
           <ProfileCard />
-          {/* <ServiceCard />
-          <ContactCard /> */}
+          <ServiceCard />
+          <ContactCard />
           <div className='pt-4'>
             <Footer />
           </div>
