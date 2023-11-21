@@ -33,6 +33,11 @@ a {
   cursor: pointer;
 }
 
+img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
 ul {
   padding: 0;
 }
