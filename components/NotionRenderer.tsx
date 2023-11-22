@@ -63,9 +63,9 @@ const Collection = dynamic(() =>
 const Equation = dynamic(() =>
   import('react-notion-x/build/third-party/equation').then((m) => m.Equation)
 )
-const Pdf = dynamic(() => import('react-notion-x/build/third-party/pdf').then((m) => m.Pdf), {
-  ssr: false,
-})
+// const Pdf = dynamic(() => import('react-notion-x/build/third-party/pdf').then((m) => m.Pdf), {
+//   ssr: false,
+// })
 const Modal = dynamic(() => import('react-notion-x/build/third-party/modal').then((m) => m.Modal), {
   ssr: false,
 })
@@ -85,14 +85,16 @@ const NotionRenderer: FC<Props> = ({ recordMap }) => {
       <_NotionRenderer
         darkMode={scheme === 'dark'}
         recordMap={recordMap}
-        components={{
-          Collection,
-          Equation,
-          Modal,
-          Pdf,
-          nextImage: Image,
-          nextLink: Link,
-        }}
+        components={
+          {
+            // Collection,
+            // Equation,
+            // Modal,
+            // Pdf,
+            // nextImage: Image,
+            // nextLink: Link,
+          }
+        }
         mapPageUrl={mapPageUrl}
       />
     </div>
