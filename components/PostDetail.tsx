@@ -5,7 +5,8 @@ import PostHeader from './PostHeader'
 import Footer from './PostFooter'
 import CommentBox from './CommentBox'
 import Category from './Category'
-import { TPost } from '@/types'
+import { PostDetail, TPost } from '@/types'
+import NotionRenderer from './NotionRenderer'
 
 type Props = {}
 
@@ -91,7 +92,7 @@ const PostDetail: React.FC<Props> = () => {
       collection_query: {},
       signed_urls: {},
     },
-  } as TPost
+  } as unknown as PostDetail
 
   if (!data) return null
 
@@ -106,7 +107,9 @@ const PostDetail: React.FC<Props> = () => {
           </div>
         )}
         {data.type[0] === 'Post' && <PostHeader data={data} />}
-        <div>{/* <NotionRenderer recordMap={data.recordMap} /> */}</div>
+        <div>
+          <NotionRenderer recordMap={data.recordMap} />
+        </div>
         {data.type[0] === 'Post' && (
           <>
             <Footer />
