@@ -8,7 +8,7 @@ type Props = {}
 const ProfileCard: React.FC<Props> = () => {
   return (
     <div>
-      <div className='title mb-3 p-1'>
+      <div className='title mb-3 p-1 h-[27px]'>
         <Emoji>💻</Emoji> Profile
       </div>
       <div className='bg-[rgb(40,40,40)] w-full mb-9 rounded-2xl sm:p-4 lg:p-4'>

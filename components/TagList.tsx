@@ -42,8 +42,8 @@ const TagList = () => {
     }
   }
   return (
-    <div className='tagList'>
-      <div className='top hidden md:block p-1 mb-3'>
+    <div>
+      <div className='top hidden md:block p-1 mb-3 h-[27px]'>
         <Emoji>🏷️</Emoji> Tags
       </div>
       <div className='list flex flex-wrap gap-1 md:block mb-6 overflow-x-auto scrollbar-none'>
@@ -63,21 +63,3 @@ const TagList = () => {
 }
 
 export default TagList
-
-// const StyledWrapper = styled.div`
-//   a {
-//     color: ${({ theme }) => theme.colors.gray10};
-
-//     :hover {
-//       background-color: ${({ theme }) => theme.colors.gray4};
-//     }
-//     &[data-active='true'] {
-//       color: ${({ theme }) => theme.colors.gray12};
-//       background-color: ${({ theme }) => theme.colors.gray4};
-
-//       :hover {
-//         background-color: ${({ theme }) => theme.colors.gray4};
-//       }
-//     }
-//   }
-// `
