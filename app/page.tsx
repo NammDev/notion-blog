@@ -4,11 +4,11 @@ import ContactCard from '@/components/ContactCard'
 import FeedHeader from '@/components/FeedHeader'
 import Footer from '@/components/Footer'
 import MobileProfileCard from '@/components/MobileProfileCard'
+import PostList from '@/components/PostLIst'
 import ProfileCard from '@/components/ProfileCard'
 import SearchInput from '@/components/SearchInput'
 import ServiceCard from '@/components/ServiceCard'
 import TagList from '@/components/TagList'
-import Image from 'next/image'
 import { useState } from 'react'
 
 export default function Home() {
@@ -26,7 +26,7 @@ export default function Home() {
             <TagList />
           </div>
           <FeedHeader />
-          {/* <PostList q={q} /> */}
+          <PostList q={q} />
           <div className='pt-4 lg:hidden'>
             <Footer />
           </div>
