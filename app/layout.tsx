@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import { pretendard } from '@/public/fonts'
+import Providers from '@/lib/provider'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -13,10 +14,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang='en'>
       <body className={pretendard.className}>
-        <div>
+        <Providers>
           <Header fullWidth={false} />
           {children}
-        </div>
+        </Providers>
       </body>
     </html>
   )
