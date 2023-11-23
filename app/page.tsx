@@ -16,10 +16,8 @@ export default async function Home() {
   const dehydratedState = dehydrate(queryClient)
 
   return (
-    <main className='w-full max-w-[1120px] mx-auto my-0 px-4 py-0'>
-      <HydrationBoundary state={dehydratedState}>
-        <Feed />
-      </HydrationBoundary>
-    </main>
+    <HydrationBoundary state={dehydratedState}>
+      <Feed />
+    </HydrationBoundary>
   )
 }
