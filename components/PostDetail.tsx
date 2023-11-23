@@ -1,21 +1,24 @@
+'use client'
 import React from 'react'
-// import NotionRenderer from '../components/NotionRenderer'
 
 import PostHeader from './PostHeader'
 import Footer from './PostFooter'
 import CommentBox from './CommentBox'
 import Category from './Category'
 import NotionRenderer from './NotionRenderer'
-import usePostQuery from '@/hooks/usePostQuery'
+import { useQuery } from '@tanstack/react-query'
+import { PostDetail } from '@/types'
+import { queryKey } from '@/constants/queryKey'
 
-type Props = {}
+type Props = {
+  slug: string
+}
 
-const PostDetail: React.FC<Props> = () => {
-  const data = {
-    category: ['Category'],
-    status: ['PublicOnDetail'],
-    type: ['Post'],
-  }
+const PostDetail: React.FC<Props> = ({ slug }) => {
+  const { data } = useQuery<PostDetail>({
+    queryKey: queryKey.post(`${slug}`),
+    enabled: false,
+  })
 
   if (!data) return null
 
