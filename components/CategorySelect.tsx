@@ -2,19 +2,31 @@ import React from 'react'
 import { MdExpandMore } from 'react-icons/md'
 import { DEFAULT_CATEGORY } from '@/constants'
 import useDropdown from '@/hooks/useDropdown'
+import { useCategoriesQuery } from '@/hooks/useCategoriesQuery'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
 type Props = {}
 
 const CategorySelect: React.FC<Props> = () => {
-  const data: { [key: string]: number } = {
-    '📂 All': 7,
-    '📗 Docs': 1,
-    '💻 Frontend': 4,
-    '🤖 Computer Science': 2,
-  }
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+
+  const data = useCategoriesQuery()
   const [dropdownRef, opened, handleOpen] = useDropdown()
 
-  const currentCategory = DEFAULT_CATEGORY
+  const currentCategory = searchParams.get("category") || DEFAULT_CATEGORY
+
+  const handleOptionClick = (category: string) => {
+    const current = new URLSearchParams(Array.from(searchParams.entries())); // -> has to use this form
+    current.set("category", category);
+
+    const search = current.toString();
+    const query = search ? `?${search}` : "";
+
+    router.push(`${pathname}${query}`);
+  }
 
   return (
     <div className='relative'>
@@ -31,6 +43,7 @@ const CategorySelect: React.FC<Props> = () => {
             <div
               className='hover:bg-[rgb(40,40,40)] text-sm leading-5 whitespace-nowrap cursor-pointer px-2 p-1 rounded-xl'
               key={idx}
+              onClick={() => handleOptionClick(key)}
             >
               {`${key} (${data[key]})`}
             </div>
