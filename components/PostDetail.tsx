@@ -5,10 +5,10 @@ import PostHeader from './PostHeader'
 import Footer from './PostFooter'
 import CommentBox from './CommentBox'
 import Category from './Category'
-import NotionRenderer from './NotionRenderer'
 import { useQuery } from '@tanstack/react-query'
 import { PostDetail } from '@/types'
 import { queryKey } from '@/constants/queryKey'
+import NotionPage from './NotionPage'
 
 type Props = {
   slug: string
@@ -33,7 +33,9 @@ const PostDetail: React.FC<Props> = ({ slug }) => {
           </div>
         )}
         {data.type[0] === 'Post' && <PostHeader data={data} />}
-        <div>{/* <NotionRenderer recordMap={data.recordMap} /> */}</div>
+        <div>
+          <NotionPage recordMap={data.recordMap} />
+        </div>
         {data.type[0] === 'Post' && (
           <>
             <Footer />

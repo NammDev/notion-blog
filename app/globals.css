@@ -88,3 +88,10 @@ body {
   background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
     rgb(var(--background-start-rgb));
 }
+
+.notion-collection-page-properties {
+  display: none !important;
+}
+.notion-page {
+  padding: 0;
+}

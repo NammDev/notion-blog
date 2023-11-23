@@ -18,14 +18,17 @@
     "notion-client": "^6.16.0",
     "notion-types": "^6.16.0",
     "notion-utils": "^6.16.0",
-    "react": "^18",
+    "prismjs": "^1.29.0",
+    "react": "^18.2.0",
     "react-dom": "^18",
     "react-icons": "^4.12.0",
     "react-notion-x": "^6.16.0",
+    "react-pdf": "^7.5.1",
     "tailwind-merge": "^2.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",
+    "@types/prismjs": "^1.26.3",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
