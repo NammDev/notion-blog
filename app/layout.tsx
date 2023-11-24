@@ -5,6 +5,7 @@ import { pretendard } from '@/public/fonts'
 import Providers from '@/lib/provider'
 import Scripts from '@/components/layout/Script'
 import useGtagEffect from '@/hooks/useGtagEffect'
+import { cn } from '@/lib/utils'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,7 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   // useGtagEffect()
   return (
     <html lang='en'>
-      <body className={pretendard.className}>
+      <body className={cn('bg-background', pretendard.className)}>
         <Providers>
           <Scripts />
           <Header fullWidth={false} />

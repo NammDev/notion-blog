@@ -17,7 +17,7 @@ const PostCard: React.FC<Props> = ({ data }) => {
 
   return (
     <Link href={`/${data.slug}`}>
-      <article className='bg-[rgb(40,40,40)] hover:shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),0_4px_6px_-2px_rgba(0,0,0,0.05)] overflow-hidden relative transition-shadow ease-in-out duration-300 mb-6 rounded-2xl md:mb-8'>
+      <article className='dark:bg-muted bg-white hover:shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),0_4px_6px_-2px_rgba(0,0,0,0.05)] overflow-hidden relative transition-shadow ease-in-out duration-300 mb-6 rounded-2xl md:mb-8'>
         {category && (
           <div className='absolute z-10 left-4 top-4'>
             <Category>{category}</Category>

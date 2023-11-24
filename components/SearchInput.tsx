@@ -10,7 +10,7 @@ const SearchInput: React.FC<Props> = ({ ...props }) => {
         <Emoji>🔎</Emoji> Search
       </div>
       <input
-        className='w-full px-5 py-2 rounded-2xl bg-[rgb(40,40,40)]'
+        className='w-full px-5 py-2 rounded-2xl bg-muted text-muted-foreground'
         type='text'
         placeholder='Search Keyword...'
         {...props}

@@ -6,10 +6,10 @@ const ContactCard: React.FC = () => {
   return (
     <>
       <div className='mb-3 p-1'>💬 Contact</div>
-      <div className='flex flex-col p-1 rounded-2xl bg-[rgb(40,40,40)]'>
+      <div className='flex flex-col p-1 rounded-2xl dark:bg-muted bg-white'>
         {CONFIG.profile.github && (
           <a
-            className='text-[rgb(160,160,160)] flex gap-3 items-center cursor-pointer p-3 rounded-2xl hover:text-[rgb(237,237,237)] hover:bg-[rgb(46,46,46)]'
+            className='flex gap-3 items-center cursor-pointer p-3 rounded-2xl text-accent-foreground hover:text-popover-foreground hover:bg-popover'
             href={`https://github.com/${CONFIG.profile.github}`}
             rel='noreferrer'
             target='_blank'
@@ -20,7 +20,7 @@ const ContactCard: React.FC = () => {
         )}
         {CONFIG.profile.instagram && (
           <a
-            className='text-[rgb(160,160,160)] flex gap-3 items-center cursor-pointer p-3 rounded-2xl hover:text-[rgb(237,237,237)] hover:bg-[rgb(46,46,46)]'
+            className='flex gap-3 items-center cursor-pointer p-3 rounded-2xl text-accent-foreground hover:text-popover-foreground hover:bg-popover'
             href={`https://www.instagram.com/${CONFIG.profile.instagram}`}
             rel='noreferrer'
             target='_blank'
@@ -31,7 +31,7 @@ const ContactCard: React.FC = () => {
         )}
         {CONFIG.profile.email && (
           <a
-            className='text-[rgb(160,160,160)] overflow-hidden flex gap-3 items-center cursor-pointer p-3 rounded-2xl hover:text-[rgb(237,237,237)] hover:bg-[rgb(46,46,46)]'
+            className='overflow-hidden flex gap-3 items-center cursor-pointer p-3 rounded-2xl text-accent-foreground hover:text-popover-foreground hover:bg-popover'
             href={`mailto:${CONFIG.profile.email}`}
             rel='noreferrer'
             target='_blank'
@@ -42,7 +42,7 @@ const ContactCard: React.FC = () => {
         )}
         {CONFIG.profile.linkedin && (
           <a
-            className='text-[rgb(160,160,160)] overflow-hidden flex gap-3 items-center cursor-pointer p-3 rounded-2xl hover:text-[rgb(237,237,237)] hover:bg-[rgb(46,46,46)]'
+            className='overflow-hidden flex gap-3 items-center cursor-pointer p-3 rounded-2xl text-accent-foreground hover:text-popover-foreground hover:bg-popover'
             href={`https://www.linkedin.com/in/${CONFIG.profile.linkedin}`}
             rel='noreferrer'
             target='_blank'

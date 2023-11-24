@@ -10,10 +10,10 @@ const ServiceCard: React.FC = () => {
       <div className='mb-3 p-1'>
         <Emoji>🌟</Emoji> Service
       </div>
-      <div className='flex flex-col mb-9 p-1 rounded-2xl bg-[rgb(40,40,40)]'>
+      <div className='flex flex-col mb-9 p-1 rounded-2xl dark:bg-muted bg-white'>
         {CONFIG.projects.map((project, idx) => (
           <a
-            className='flex gap-3 items-center cursor-pointer p-3 rounded-2xl text-[rgb(160,160,160)] hover:text-[rgb(237,237,237)] hover:bg-[rgb(46,46,46)]'
+            className='flex gap-3 items-center cursor-pointer p-3 rounded-2xl text-accent-foreground hover:text-popover-foreground hover:bg-popover'
             key={idx}
             href={`${project.href}`}
             rel='noreferrer'

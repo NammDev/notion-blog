@@ -10,7 +10,7 @@ type Props = {
 
 const Header: React.FC<Props> = ({ fullWidth }) => {
   return (
-    <div className='z-30 sticky top-0 shadow-[rgba(0,0,0,0.05)_0px_1px_2px_0px] bg-[rgb(28,28,28)]'>
+    <div className='z-30 sticky top-0 shadow-[rgba(0,0,0,0.05)_0px_1px_2px_0px] bg-background'>
       <div
         className={cn(
           'flex justify-between items-center w-full max-w-[1120px] h-12 mx-auto my-0 px-4',
