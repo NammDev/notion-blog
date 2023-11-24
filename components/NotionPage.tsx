@@ -12,6 +12,7 @@ import 'prismjs/themes/prism-tomorrow.css'
 // used for rendering equations (optional)
 import 'katex/dist/katex.min.css'
 import { FC } from 'react'
+import { useTheme } from 'next-themes'
 
 const _NotionRenderer = dynamic(() => import('react-notion-x').then((m) => m.NotionRenderer), {
   ssr: false,
@@ -81,10 +82,11 @@ type Props = {
 }
 
 const NotionPage: FC<Props> = ({ recordMap }) => {
+  const { theme } = useTheme()
   return (
     <div>
       <_NotionRenderer
-        darkMode={true}
+        darkMode={theme === 'dark'}
         recordMap={recordMap}
         components={{
           Code,
