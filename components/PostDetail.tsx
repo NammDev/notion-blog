@@ -39,7 +39,7 @@ const PostDetail: React.FC<Props> = ({ slug }) => {
         {data.type[0] === 'Post' && (
           <>
             <Footer />
-            {/* <CommentBox data={data} /> */}
+            <CommentBox data={data} />
           </>
         )}
       </article>

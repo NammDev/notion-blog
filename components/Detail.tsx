@@ -15,8 +15,6 @@ const Detail: React.FC<Props> = ({ slug }) => {
     queryKey: queryKey.post(`${slug}`),
     enabled: false,
   })
-
-  console.log(data?.type[0])
   useMermaidEffect()
 
   if (!data) return null

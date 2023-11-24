@@ -8,24 +8,13 @@ const UtterancesComponent = dynamic(
   },
   { ssr: false }
 )
-const CusdisComponent = dynamic(
-  () => {
-    return import('./Cusdis')
-  },
-  { ssr: false }
-)
 
 type Props = {
   data: TPost
 }
 
 const CommentBox: React.FC<Props> = ({ data }) => {
-  return (
-    <div>
-      {CONFIG.utterances.enable && <UtterancesComponent issueTerm={data.id} />}
-      {CONFIG.cusdis.enable && <CusdisComponent id={data.id} slug={data.slug} title={data.title} />}
-    </div>
-  )
+  return <div>{CONFIG.utterances.enable && <UtterancesComponent issueTerm={data.id} />}</div>
 }
 
 export default CommentBox
