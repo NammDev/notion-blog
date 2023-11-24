@@ -24,7 +24,7 @@ const PostCard: React.FC<Props> = ({ data }) => {
           </div>
         )}
         {data.thumbnail && (
-          <div className='relative w-full pb-[66%] lg:pb-[50%] bg-[rgb(28,28,28)]'>
+          <div className='relative w-full pb-[66%] lg:pb-[50%] bg-background'>
             <Image src={data.thumbnail} fill alt={data.title} className='object-cover' />
           </div>
         )}
@@ -35,12 +35,12 @@ const PostCard: React.FC<Props> = ({ data }) => {
             </h2>
           </header>
           <div className='flex gap-2 items-center mb-4'>
-            <div className='text-sm leading-5 md:ml-0 text-[rgb(126,126,126)]'>
+            <div className='text-sm leading-5 md:ml-0 text-card-foreground'>
               {formatDate(data?.date?.start_date || data.createdTime, CONFIG.lang)}
             </div>
           </div>
           <div className='mb-4'>
-            <p className='hidden leading-8 md:block text-[rgb(160,160,160)]'>{data.summary}</p>
+            <p className='hidden leading-8 md:block text-accent-foreground'>{data.summary}</p>
           </div>
           <div className='flex gap-2'>
             {data.tags && data.tags.map((tag: string, idx: number) => <Tag key={idx}>{tag}</Tag>)}

@@ -14,7 +14,7 @@ const Footer: React.FC<Props> = ({ className }) => {
   return (
     <div>
       <Link
-        className='text-sm leading-5 text-[rgb(126,126,126)] mt-3'
+        className='text-sm leading-5 text-card-foreground mt-3'
         href={`https://github.com/${CONFIG.profile.github}`}
         target='_blank'
       >

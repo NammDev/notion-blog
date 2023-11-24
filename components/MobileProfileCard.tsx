@@ -10,7 +10,7 @@ const MobileProfileCard: React.FC<Props> = () => {
   return (
     <div className='block lg:hidden'>
       <div className='mb-3 p-1'>💻 Profile</div>
-      <div className='bg-[rgb(40,40,40)] mb-4 p-2 rounded-2xl'>
+      <div className='bg-muted mb-4 p-2 rounded-2xl'>
         <div className='flex gap-2 items-center'>
           <Image
             src={CONFIG.profile.image}

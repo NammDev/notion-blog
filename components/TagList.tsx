@@ -41,7 +41,7 @@ const TagList = () => {
         {Object.keys(data).map((key) => (
           <a
             className={cn(
-              'block text-sm leading-5 text-[rgb(126,126,126)] shrink-0 cursor-pointer my-1 px-4 py-1 rounded-xl hover:bg-muted',
+              'block text-sm leading-5 text-card-foreground shrink-0 cursor-pointer my-1 px-4 py-1 rounded-xl hover:bg-muted',
               currentTag === key && 'text-muted-foreground bg-muted'
             )}
             key={key}

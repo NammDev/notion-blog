@@ -14,7 +14,7 @@ const PostHeader: React.FC<Props> = ({ data }) => {
     <div>
       <h1 className='text-3xl leading-9 font-bold'>{data.title}</h1>
       {data.type[0] !== 'Paper' && (
-        <nav className='mt-6 text-[rgb(160,160,160)]'>
+        <nav className='mt-6 text-accent-foreground'>
           <div className='flex gap-3 items-center mb-3'>
             {data.author && data.author[0] && data.author[0].name && (
               <>
@@ -28,7 +28,7 @@ const PostHeader: React.FC<Props> = ({ data }) => {
                   />
                   <div className=''>{data.author[0].name}</div>
                 </div>
-                <div className='self-stretch w-px bg-[rgb(126,126,126)] my-1'></div>
+                <div className='self-stretch w-px bg-card-foreground my-1'></div>
               </>
             )}
             <div className='mr-2 md:ml-0'>
