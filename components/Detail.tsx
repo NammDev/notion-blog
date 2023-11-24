@@ -1,19 +1,29 @@
 'use client'
 
-import usePostsQuery from '@/hooks/usePostsQuery'
-import PostDetail from './PostDetail'
 import useMermaidEffect from '@/hooks/useMermaidEffect'
+import { cn } from '@/lib/utils'
+import { useQuery } from '@tanstack/react-query'
+import { queryKey } from '@/constants/queryKey'
+import { PostDetail as PostDetailType } from '@/types'
+import PostDetail from './PostDetail'
+import PageDetail from './PageDetail'
 
 type Props = { slug: string }
 
 const Detail: React.FC<Props> = ({ slug }) => {
-  const data = usePostsQuery()
+  const { data } = useQuery<PostDetailType>({
+    queryKey: queryKey.post(`${slug}`),
+    enabled: false,
+  })
+
+  console.log(data?.type[0])
   useMermaidEffect()
 
   if (!data) return null
   return (
-    <div className='px-0 py-8'>
-      <PostDetail slug={slug} />
+    <div className={cn('px-0 py-8', data.type[0] === 'Paper' && 'px-0 py-10')}>
+      {data.type[0] === 'Page' && <PageDetail slug={slug} />}
+      {data.type[0] !== 'Page' && <PostDetail slug={slug} />}
     </div>
   )
 }

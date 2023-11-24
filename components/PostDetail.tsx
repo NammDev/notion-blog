@@ -25,7 +25,7 @@ const PostDetail: React.FC<Props> = ({ slug }) => {
   const category = (data.category && data.category?.[0]) || undefined
 
   return (
-    <div className='max-w-4xl dark:bg-background bg-white shadow-[rgba(0,0,0,0.1)_0px_4px_6px_-1px,rgba(0,0,0,0.06)_0px_2px_4px_-1px] mx-auto my-0 px-6 py-12 rounded-3xl'>
+    <div className='max-w-4xl dark:bg-muted bg-white shadow-[rgba(0,0,0,0.1)_0px_4px_6px_-1px,rgba(0,0,0,0.06)_0px_2px_4px_-1px] mx-auto my-0 px-6 py-12 rounded-3xl'>
       <article className='max-w-2xl mx-auto my-0'>
         {category && (
           <div className='mb-2'>
