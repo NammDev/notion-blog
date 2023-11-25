@@ -1,38 +1,42 @@
 'use client'
-import { useEffect } from 'react'
+import { createRef, useEffect } from 'react'
 import { CONFIG } from '@/site.config'
+import { useTheme } from 'next-themes'
 
 type Props = {
   issueTerm: string
 }
 
 const Utterances: React.FC<Props> = ({ issueTerm }) => {
-  const scheme = 'light'
+  const { theme } = useTheme()
+  const gTheme = theme === 'light' ? 'github-light' : 'github-dark'
+  const utterancesRef = createRef<HTMLDivElement>()
 
   useEffect(() => {
-    const theme = scheme === 'light' ? 'github-light' : 'github-dark'
-    const script = document.createElement('script')
-    const anchor = document.getElementById('comments')
-    if (!anchor) return
+    const scriptElement = document.createElement('script')
+    scriptElement.src = 'https://utteranc.es/client.js'
+    scriptElement.async = true
+    scriptElement.defer = true
+    scriptElement.setAttribute('crossorigin', 'annonymous')
+    scriptElement.setAttribute('repo', CONFIG.utterances.config.repo)
+    scriptElement.setAttribute('label', CONFIG.utterances.config.label)
+    scriptElement.setAttribute('issue-term', 'title')
+    scriptElement.setAttribute('theme', gTheme)
 
-    script.setAttribute('src', 'https://utteranc.es/client.js')
-    script.setAttribute('crossorigin', 'anonymous')
-    script.setAttribute('async', `true`)
-    script.setAttribute('issue-term', issueTerm)
-    script.setAttribute('theme', theme)
-    script.setAttribute('repo', CONFIG.utterances.config.repo)
-    script.setAttribute('label', CONFIG.utterances.config.label)
-
-    anchor.appendChild(script)
-    return () => {
-      anchor.innerHTML = ''
+    scriptElement.onload = () => {
+      const comments = document.getElementById('comments-container')
+      if (comments?.children[1] && comments) {
+        //@ts-ignore
+        comments.children[1].style.display = 'none'
+      }
     }
-  }, [scheme])
+
+    utterancesRef.current?.appendChild(scriptElement)
+  }, [utterancesRef, gTheme])
+
   return (
     <>
-      <div className='md:ml-[-4rem]' id='comments'>
-        <div className='utterances-frame'></div>
-      </div>
+      <div ref={utterancesRef} className='md:ml-[-4rem]' id='comments-container'></div>
     </>
   )
 }
