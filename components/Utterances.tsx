@@ -9,10 +9,10 @@ type Props = {
 
 const Utterances: React.FC<Props> = ({ issueTerm }) => {
   const { theme } = useTheme()
-  const gTheme = theme === 'light' ? 'github-light' : 'github-dark'
   const utterancesRef = createRef<HTMLDivElement>()
 
   useEffect(() => {
+    const gTheme = theme === 'light' ? 'github-light' : 'github-dark'
     const scriptElement = document.createElement('script')
     scriptElement.src = 'https://utteranc.es/client.js'
     scriptElement.async = true
@@ -25,8 +25,8 @@ const Utterances: React.FC<Props> = ({ issueTerm }) => {
 
     scriptElement.onload = () => {
       const comments = document.getElementById('comments-container')
-      if (comments?.children[1] && comments) {
-        for (let i = 1; i < comments?.children.length; i++) {
+      if (comments && comments?.children?.length > 1) {
+        for (let i = 0; i < comments?.children.length - 1; i++) {
           //@ts-ignore
           comments.children[i].style.display = 'none'
         }
@@ -34,7 +34,7 @@ const Utterances: React.FC<Props> = ({ issueTerm }) => {
     }
 
     utterancesRef.current?.appendChild(scriptElement)
-  }, [utterancesRef, gTheme, issueTerm])
+  }, [utterancesRef, theme, issueTerm])
 
   return (
     <>
