@@ -20,11 +20,3 @@ const SearchInput: React.FC<Props> = ({ ...props }) => {
 }
 
 export default SearchInput
-
-// const StyledWrapper = styled.div`
-//   > .top {
-//   }
-//   > .mid {
-//     background-color: ${({ theme }) => theme.colors.gray4};
-//   }
-// `
