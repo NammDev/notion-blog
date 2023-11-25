@@ -34,11 +34,11 @@ const Utterances: React.FC<Props> = ({ issueTerm }) => {
     }
 
     utterancesRef.current?.appendChild(scriptElement)
-  }, [utterancesRef, gTheme])
+  }, [utterancesRef, gTheme, issueTerm])
 
   return (
     <>
-      <div ref={utterancesRef} className='md:ml-[-4rem]' id='comments-container'></div>
+      <div ref={utterancesRef} className='md:ml-[-4rem] mt-4' id='comments-container'></div>
     </>
   )
 }
