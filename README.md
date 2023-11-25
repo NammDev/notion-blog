@@ -10,3 +10,14 @@ Effortlessly build and manage your website with Notion-driven content. Automatic
 - **SEO friendly:** Dynamically generates OG IMAGES (thumbnails!) for posts and creates a sitemap for posts.
 
 - **Customizable and supports various plugins:** Update your profile information through Config (site.config.js). Plugins support includes Google Analytics, Search Console, and commenting using Github Issues (Utterances) or Cusdis.
+
+## Need to finish
+
+- SEO
+  - Script
+  - SEO
+  - gTag (useGtagEffect)
+  - next-sitemap
+- sitemap
+- Bug
+  - Click on tag (inside postcard)
